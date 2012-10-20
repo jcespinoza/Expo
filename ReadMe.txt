@@ -1,0 +1,1 @@
+This project is used to demonstrate the use of the classes studied throughout the course for group presentation purposes.
