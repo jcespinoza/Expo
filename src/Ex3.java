@@ -14,10 +14,15 @@ enum NumeroCarta{
     public String nombre(){
         return this.nombre;
     }
+    public int toInt(){
+        return this.ordinal() + 1;
+    }
 }
 
 enum SimboloCarta{
-    PICAS("Picas"), CORAZONES("Corazones"), DIAMANTES("Diamantes"), TREBOLES("Treboles");
+    PICAS("Picas"), CORAZONES("Corazones"),
+    DIAMANTES("Diamantes"), TREBOLES("Treboles");
+    
     private String nombre;
     private SimboloCarta(String nom){
         nombre = nom;
@@ -36,15 +41,19 @@ class Carta{
         this.simb = s;
         this.num = n;
     }
+
     public Carta(int s, int n){
         this.num = NumeroCarta.values()[n - 1];
         this.simb = SimboloCarta.values()[s];
     }
-    public static void main(String[] args) {
+
+    public static void main(String[] args){
         Carta c1 = new Carta(SimboloCarta.CORAZONES, NumeroCarta.AS);
         Carta c2 = new Carta(0, 5);
-        
-        System.out.println("La carta c1 es un " + c1.num.nombre() + " de " + c1.simb.toString());
+
+        System.out.println("La carta c1 es un " + c1.num.name() + " de " + c1.simb.toString());
         System.out.println("La carta c2 es un " + c2.num.nombre() + " de " + c2.simb.toString());
+        System.out.println("El valor de la constante \"PICAS\" en SimboloCarta es: " + SimboloCarta.valueOf("PICAS"));
+        System.out.println("El valor del Seis de Corazones es: " + ( new Carta(1,6).num.toInt()) );
     }
 }
