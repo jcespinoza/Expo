@@ -1,3 +1,5 @@
+package Expo1;
+
 enum NumeroCarta{
     AS(1, "As"), DOS(2, "Dos"), TRES(3, "Tres"),
     CUATRO(4, "Cuatro"), CINCO(5, "Cinco"), SEIS(6, "Seis"),
